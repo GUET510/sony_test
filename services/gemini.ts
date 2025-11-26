@@ -1,7 +1,10 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { ShootingPlan, UserInput } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({
+  apiKey: import.meta.env.VITE_GEMINI_API_KEY,
+});
+
 
 const SYSTEM_INSTRUCTION = `
 你是一位拥有 20 年经验的顶级人像摄影导师，你正在指导一位**完全不懂摄影的新手**使用 **Sony A7R3** 和 **24-70mm F4** 镜头拍出大片。
